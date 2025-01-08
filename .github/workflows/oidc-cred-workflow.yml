@@ -2,7 +2,8 @@
 # The workflow Creates static website using aws s3
 name: AWS example workflow
 on:
-  push
+  push:
+    branches: [ $default-branch ]
 env:
   BUCKET_NAME : "haile-web-static-assets"
   AWS_REGION : "ap-southeast-1"
