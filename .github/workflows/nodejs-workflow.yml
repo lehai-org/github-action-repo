@@ -72,5 +72,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
+          path: dist/
       - run: ls -l
       - run: ls -l dist/
