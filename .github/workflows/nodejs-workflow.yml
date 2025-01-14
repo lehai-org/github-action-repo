@@ -58,10 +58,7 @@ jobs:
           role-to-assume: arn:aws:iam::520812544446:role/sap-github-action-oidc-role
           role-session-name: samplerolesession
           aws-region: ${{ env.AWS_REGION }}
-      # Upload a file to AWS s3
-      # - name: Copy index.html to s3
-      #   run: |
-      #     aws s3 cp ./package.json s3://${{ env.BUCKET_NAME }}/
+
       # - name: Restore cached Primes
       #   id: cache-restore
       #   uses: actions/cache/restore@v4
@@ -75,3 +72,6 @@ jobs:
           path: dist/
       - run: ls -l
       - run: ls -l dist/
+      - name: Copy build artifacts to s3
+        run: |
+          aws s3 sync dist/ s3://${{ env.BUCKET_NAME }}/
