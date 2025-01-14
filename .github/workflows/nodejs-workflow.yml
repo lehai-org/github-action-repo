@@ -47,5 +47,4 @@ jobs:
       # - name: Copy index.html to s3
       #   run: |
       #     aws s3 cp ./package.json s3://${{ env.BUCKET_NAME }}/
-      - name: list all resouce
-        run: ls -l
+      - run: ls -l
