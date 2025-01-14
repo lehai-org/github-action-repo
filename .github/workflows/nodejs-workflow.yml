@@ -6,8 +6,11 @@ name: Node.js CI
 on:
   push:
     branches: ["main"]
-#   pull_request:
-#     branches: [ $default-branch ]
+
+env:
+  BUCKET_NAME: "haile-web-static-assets"
+  AWS_REGION: "ap-southeast-1"
+
 permissions:
   id-token: write # This is required for requesting the JWT
   contents: read # This is required for actions/checkout
